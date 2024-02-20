@@ -43,7 +43,7 @@ public class MultipletargetCamera : MonoBehaviour
         {
             bounds.Encapsulate(targets[i].position);
         }
-        Debug.Log(bounds.size.x);
+        //Debug.Log(bounds.size.x);
         return bounds.size.x;
     }
 

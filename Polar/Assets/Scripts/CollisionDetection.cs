@@ -15,4 +15,12 @@ public class KillPlayer : MonoBehaviour
             transform.position = new Vector2(respawnCoords.x,respawnCoords.y);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Breakable"))
+        {
+            collision.gameObject.GetComponent<Crackable>().StartCrack();
+        }
+    }
 }
