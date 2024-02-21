@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
@@ -21,6 +22,10 @@ public class KillPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("Breakable"))
         {
             collision.gameObject.GetComponent<Crackable>().StartCrack();
+        }
+        if (collision.gameObject.CompareTag("SelectiveBreakable"))
+        {
+            collision.gameObject.GetComponent<ThinIce>().BreakCheck(gameObject);
         }
     }
 }

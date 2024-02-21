@@ -21,7 +21,7 @@ public class MultipletargetCamera : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (targets.Count == 0)
             return;
