@@ -6,14 +6,19 @@ using UnityEngine;
 public class KillPlayer : MonoBehaviour
 {
     public LayerMask killLayer;
-    public Vector2 respawnCoords;
+    //public Vector2 respawnCoords;
     public Transform groundCheck;
+    public GameManager gm;
+    public GameObject otherPlayer;
+
 
     // creates a circle an checks if it overplaps with object on the killLayer (water rn)
     void FixedUpdate()
     {
         if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, killLayer)) {
-            transform.position = new Vector2(respawnCoords.x,respawnCoords.y);
+            //transform.position = new Vector2(respawnCoords.x,respawnCoords.y);
+            gm.LoseLife();
+            transform.position = otherPlayer.transform.position;
         }
     }
 
@@ -26,6 +31,15 @@ public class KillPlayer : MonoBehaviour
         if (collision.gameObject.CompareTag("SelectiveBreakable"))
         {
             collision.gameObject.GetComponent<ThinIce>().BreakCheck(gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Fish"))
+        {
+            Destroy(other.gameObject);
+            gm.fishCount++;
         }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1886450736478028492
+--- !u!1 &1003789412288957524
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5869812970421104471}
-  - component: {fileID: 648412695343783284}
-  - component: {fileID: 3826944306151709573}
-  - component: {fileID: 4774932745405289542}
+  - component: {fileID: 5532549160954035921}
+  - component: {fileID: 1540215406352418686}
+  - component: {fileID: 6466274089880853482}
+  - component: {fileID: 3739876110100714568}
   m_Layer: 8
-  m_Name: Thin Ice
-  m_TagString: SelectiveBreakable
+  m_Name: Breakable Block(old)
+  m_TagString: Breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5869812970421104471
+--- !u!4 &5532549160954035921
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886450736478028492}
+  m_GameObject: {fileID: 1003789412288957524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.044, y: -5.81, z: 0}
-  m_LocalScale: {x: 1.2174888, y: 0.12786052, z: 0.41643468}
+  m_LocalPosition: {x: -8.6, y: -7.7, z: 0}
+  m_LocalScale: {x: 1.1467007, y: 1.2675734, z: 1.0524}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &648412695343783284
+--- !u!61 &1540215406352418686
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886450736478028492}
+  m_GameObject: {fileID: 1003789412288957524}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 50e6f8e05ba17744696243db72e7f843, type: 2}
@@ -79,13 +79,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.44, y: 3.6}
   m_EdgeRadius: 0
---- !u!212 &3826944306151709573
+--- !u!212 &6466274089880853482
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886450736478028492}
+  m_GameObject: {fileID: 1003789412288957524}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -119,9 +119,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 39dd36ad3005a414a85d34e12a3e8fcb, type: 3}
-  m_Color: {r: 0.8679245, g: 0.8418358, b: 0.59362763, a: 1}
+  m_Color: {r: 0.9811321, g: 0.5970096, b: 0.5970096, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,16 +131,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4774932745405289542
+--- !u!114 &3739876110100714568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1886450736478028492}
+  m_GameObject: {fileID: 1003789412288957524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a8a1a730213ab4c8974f79a3ea7323, type: 3}
+  m_Script: {fileID: 11500000, guid: 202b7c715077e7644912069e9ff2226a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whoCanBreak: {fileID: 0}
