@@ -1,33 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI fishText;
-    public int fishCount;
-    public GameObject hearts;
+    public static GameManager Instance;
 
-     void Update()
+    public int numOfHearts;
+    public int numOfFish;
+
+    private void Awake()
     {
-        fishText.text = fishCount.ToString() + " x ";
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void LoseLife()
+    public void ResetHearts()
     {
-        if (hearts.transform.GetChild(2).gameObject.activeSelf == true)
-        {
-            hearts.transform.GetChild(2).gameObject.SetActive(false);
-        } else if (hearts.transform.GetChild(1).gameObject.activeSelf == true)
-        {
-            hearts.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        else if (hearts.transform.GetChild(0).gameObject.activeSelf == true)
-        {
-            SceneManager.LoadScene("Game Over");
-        }
-
+        numOfHearts = 3;
+    }
+    public void Resetfish()
+    {
+        numOfFish = 0;
     }
 }

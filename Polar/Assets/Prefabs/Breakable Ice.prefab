@@ -292,3 +292,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 202b7c715077e7644912069e9ff2226a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isIcey: 1
+  timeDelay: 1.5

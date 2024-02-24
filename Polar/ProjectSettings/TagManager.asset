@@ -7,6 +7,8 @@ TagManager:
   - Breakable
   - SelectiveBreakable
   - Fish
+  - Icey
+  - Pushable
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Ground
   - Player Baby
   - Player Mom
-  - 
+  - Collectable
   - 
   - 
   - 

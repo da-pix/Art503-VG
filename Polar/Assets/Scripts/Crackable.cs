@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Crackable : MonoBehaviour
 {
+    public bool isIcey;
+    public float timeDelay;
     public void StartCrack()
     {
         StartCoroutine(Crack());
@@ -11,11 +13,11 @@ public class Crackable : MonoBehaviour
 
     private IEnumerator Crack()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(timeDelay / 3);
         Debug.Log("cracked Stage: 1");
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(timeDelay / 3);
         Debug.Log("cracked Stage: 2");
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(timeDelay / 3);
         Destroy(gameObject);
     }
 }

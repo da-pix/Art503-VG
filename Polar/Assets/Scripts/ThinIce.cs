@@ -5,11 +5,20 @@ using UnityEngine;
 public class ThinIce : MonoBehaviour
 {
     public GameObject whoCanBreak;
+    public bool isIcey;
+
     public void BreakCheck(GameObject obj)
     {
         if (obj == whoCanBreak)
         {
-            Destroy(gameObject);
+            StartCoroutine(Break(obj));
         }
     }
+    private IEnumerator Break(GameObject obj)
+    {
+        yield return new WaitForSeconds(.2f);
+        obj.GetComponent<Player>().isOnIce = false;
+        Destroy(gameObject);
+    }
+
 }

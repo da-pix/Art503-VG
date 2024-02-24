@@ -32,11 +32,11 @@ public class MultipletargetCamera : MonoBehaviour
 
     void Zoom()
     {
-        float newZoom = Mathf.Lerp(minZoom, maxZoom, GetGreatestDistance()/ zoomLimiter);
+        float newZoom = Mathf.Lerp(minZoom, maxZoom, GetGreatestDistance() / zoomLimiter);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
     }
 
-     float GetGreatestDistance()
+    float GetGreatestDistance()
     {
         var bounds = new Bounds(targets[0].position, Vector3.zero);
         for (int i = 0; i < targets.Count; i++)
@@ -55,7 +55,7 @@ public class MultipletargetCamera : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
-     Vector3 getCentrePoint()
+    Vector3 getCentrePoint()
     {
         if (targets.Count == 1)
         {
@@ -63,7 +63,7 @@ public class MultipletargetCamera : MonoBehaviour
         }
 
         var bounds = new Bounds(targets[0].position, Vector3.zero);
-        for (int i = 0; i< targets.Count; i++)
+        for (int i = 0; i < targets.Count; i++)
         {
             bounds.Encapsulate(targets[i].position);
         }
