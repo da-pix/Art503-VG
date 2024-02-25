@@ -2,22 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class KillPlayer : MonoBehaviour
+public class CollisionDetection : MonoBehaviour
 {
     //public Vector2 respawnCoords;
     public LayerMask killLayer;
-    public Transform groundCheck;
+    private Transform groundCheck;
     public UIManager uim;
     public GameObject otherPlayer;
+
+    private void Awake()
+    {
+        groundCheck = transform.GetChild(0);
+
+    }
 
     void FixedUpdate()
     {
         if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, killLayer))
         {
             //transform.position = new Vector2(respawnCoords.x,respawnCoords.y);
-            uim.LoseHeart();
-            transform.position = otherPlayer.transform.position;
+            if (otherPlayer.gameObject.activeSelf)
+            {
+                uim.LoseHeart();
+                transform.position = otherPlayer.transform.position;
+            }
+            else
+            {
+                GameManager.Instance.GameOver("Only one of you made it out");
+            }
         }
     }
 
@@ -27,7 +41,7 @@ public class KillPlayer : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<Crackable>().isIcey == true)
             {
-                GetComponent<Player>().isOnIce = true;
+                GetComponent<PlayerController>().isOnIce = true;
             }
             collision.gameObject.GetComponent<Crackable>().StartCrack();
         }
@@ -35,7 +49,7 @@ public class KillPlayer : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<ThinIce>().isIcey == true)
             {
-                GetComponent<Player>().isOnIce = true;
+                GetComponent<PlayerController>().isOnIce = true;
             }
             collision.gameObject.GetComponent<ThinIce>().BreakCheck(gameObject);
         }
@@ -47,7 +61,7 @@ public class KillPlayer : MonoBehaviour
 
             if (angle >= 0 && angle <= 10) //colliding from top
             {
-                GetComponent<Player>().isRiding = collision.gameObject;
+                GetComponent<PlayerController>().isRiding = collision.gameObject;
             }
             else if (angle >= 90 && angle <= 100) //colliding from sides
             {
@@ -61,15 +75,15 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Breakable"))
         {
-            GetComponent<Player>().isOnIce = false;
+            GetComponent<PlayerController>().isOnIce = false;
         }
         else if (collision.gameObject.tag.Equals("Pushable"))
         {
-            GetComponent<Player>().isRiding = null;
+            GetComponent<PlayerController>().isRiding = null;
         }
         else if (collision.gameObject.CompareTag("SelectiveBreakable"))
         {
-            GetComponent<Player>().isOnIce = false;
+            GetComponent<PlayerController>().isOnIce = false;
         }
     }
 
@@ -84,14 +98,14 @@ public class KillPlayer : MonoBehaviour
 
         if (collision.gameObject.name == otherPlayer.name)  //riding mom bear
         {
-            GetComponent<Player>().isRiding = collision.gameObject;
+            GetComponent<PlayerController>().isRiding = collision.gameObject;
         }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == otherPlayer.name)
         {
-            GetComponent<Player>().isRiding = null;
+            GetComponent<PlayerController>().isRiding = null;
         }
     }
 }

@@ -18,9 +18,7 @@ public class UIManager : MonoBehaviour
     {
         if (GameManager.Instance.numOfHearts == 1)
         {
-            GameManager.Instance.Resetfish();
-            GameManager.Instance.ResetHearts();
-            SceneManager.LoadScene("Game Over");
+            GameManager.Instance.GameOver("Ran out of lives");
         }
         else hearts.transform.GetChild(GameManager.Instance.numOfHearts - 1).gameObject.SetActive(false);
         GameManager.Instance.numOfHearts--;

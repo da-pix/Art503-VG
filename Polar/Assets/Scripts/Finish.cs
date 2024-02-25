@@ -5,12 +5,31 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private int playersReached = 0;
+    public GameObject cam;
+    public string nxtLvl;
+
+
+    private void Start()
+    {
+        GameManager.Instance.nextScene = nxtLvl;
+    }
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.Instance.ResetHearts();
-            SceneManager.LoadScene("tut End");
+            if (cam.GetComponent<MultipletargetCamera>().targets.Contains(collision.transform))
+            {
+                cam.GetComponent<MultipletargetCamera>().targets.Remove(collision.transform);
+                collision.gameObject.SetActive(false);
+                playersReached++;
+            }
+            if (playersReached == 2)
+            {
+                GameManager.Instance.GoNextScene();
+                //GameManager.Instance.LoadScene(GameManager.Instance.nextScene);
+                //SceneManager.LoadScene("tut End");
+            }
         }
     }
 }

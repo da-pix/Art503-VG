@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public string nxtLvl;
+    private void Start()
+    {
+        GameManager.Instance.nextScene = nxtLvl;
+    }
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        GameManager.Instance.GoNextScene();
+        //SceneManager.LoadScene("Tutorial");
     }
     public void QuitGame()
     {

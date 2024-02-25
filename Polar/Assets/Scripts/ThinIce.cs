@@ -17,7 +17,7 @@ public class ThinIce : MonoBehaviour
     private IEnumerator Break(GameObject obj)
     {
         yield return new WaitForSeconds(.2f);
-        obj.GetComponent<Player>().isOnIce = false;
+        obj.GetComponent<PlayerController>().isOnIce = false;
         Destroy(gameObject);
     }
 

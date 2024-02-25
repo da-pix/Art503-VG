@@ -4,16 +4,15 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelEnd : MonoBehaviour
+public class GameOver : MonoBehaviour
 {
-    public TextMeshProUGUI fishText;
+    public TextMeshProUGUI deathMsgTxt;
     void Start()
     {
-        fishText.text = "Fish Collected: \n" + GameManager.Instance.numOfFish.ToString() + "!";
+        deathMsgTxt.text = GameManager.Instance.deathMsg;
     }
     public void LoadGame()
     {
-        GameManager.Instance.Resetfish();
         GameManager.Instance.GoPrevScene();
         //SceneManager.LoadScene("Tutorial");
     }
