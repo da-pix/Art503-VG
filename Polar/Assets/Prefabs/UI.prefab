@@ -201,8 +201,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5222907051606744683}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1150622053637893118}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -411,8 +411,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5222907051606744683}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1150622053637893118}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
@@ -435,7 +435,6 @@ GameObject:
   - component: {fileID: 8829913629411320162}
   - component: {fileID: 2849638624970232668}
   - component: {fileID: 2247493159049773004}
-  - component: {fileID: 5222907051606744683}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -460,7 +459,7 @@ RectTransform:
   - {fileID: 7270733221985309821}
   - {fileID: 1174584425277731609}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -530,19 +529,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5222907051606744683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3906183097710836266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c383881c8813d459651a63f5cad0b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 7630072511227219657}
 --- !u!1 &4036581369372468380
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishText: {fileID: 9093685420340032847}
   hearts: {fileID: 6280074809210542192}
+  pauseMenuUI: {fileID: 7630072511227219657}
 --- !u!1 &5289322534131260364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,8 +1566,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5222907051606744683}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1150622053637893118}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:

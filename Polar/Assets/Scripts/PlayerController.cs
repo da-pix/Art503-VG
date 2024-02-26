@@ -15,13 +15,13 @@ public class PlayerController : MonoBehaviour
     private Transform groundCheck;
     public LayerMask groundLayer, playerLayer;
     float xInput;
-    bool isGrounded;
+    public bool isGrounded;
     public Vector2 GroundCheckSize = new(0, 0);
-    private Vector2 boxSize = new(1.5f, 1f);
+    // private Vector2 boxSize = new(1.5f, 1f); //***
     private Animator anim;
 
     public GameObject cannotRide;
-    public GameObject isRiding = null;
+    public GameObject Riding = null;
     public bool isOnIce = false;
 
     [SerializeField] PlayerInput playInput;
@@ -62,55 +62,62 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-            if (isRiding != null && isRiding != cannotRide)
-                rb.velocity = new Vector2(isRiding.GetComponent<Rigidbody2D>().velocity.x, 0) + new Vector2(moveSpeed * xInput, rb.velocity.y);
+            if (Riding != null)
+            {
+                rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, 0) + new Vector2(moveSpeed * xInput, rb.velocity.y);
+                anim.SetFloat("Speed", 0f);
+
+            }
+
 
             else if (isOnIce)
             {
                 rb.AddForce(new Vector2(iceMoveSpeed * xInput, rb.velocity.y));
+                anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
             }
             else
+            {
                 rb.velocity = new Vector2(moveSpeed * xInput, rb.velocity.y);
+                anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+            }
+
         }
         else
         {
             float velX;
             if (rb.velocity.x < 0)
-                velX = Mathf.Max(rb.velocity.x + (jumpMoveSpeed * xInput), -moveSpeed);
+                velX = Mathf.Max(rb.velocity.x + (jumpMoveSpeed * xInput), -(moveSpeed + 1.5f));
             else
-                velX = Mathf.Min(rb.velocity.x + (jumpMoveSpeed * xInput), moveSpeed);
+                velX = Mathf.Min(rb.velocity.x + (jumpMoveSpeed * xInput), (moveSpeed + 1.5f));
 
             rb.velocity = new Vector2(velX, rb.velocity.y);
         }
-
-        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     private void Jump()
     {
         anim.SetBool("IsJumping", true);
-        //Debug.Log(" jumping false");
 
-        if (isRiding != null && isRiding != cannotRide)
-            rb.velocity = new Vector2(isRiding.GetComponent<Rigidbody2D>().velocity.x, jumpForce);
+        if (Riding != null)
+            rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, jumpForce);
         else
             rb.velocity = Vector2.up * jumpForce;
     }
 
     void GroundCheck()
     {
-         bool wasGrounded = isGrounded;
+        bool wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapBox(groundCheck.position, GroundCheckSize, 0f, groundLayer) || Physics2D.OverlapBox(groundCheck.position, GroundCheckSize, 0f, playerLayer);
 
         if ((wasGrounded == false) && (isGrounded == true))
         {
             anim.SetBool("IsJumping", false);
-            //Debug.Log(" jumping false");
 
 
         }
         Debug.Log(isGrounded);
-        //Debug.Log("is grounded = " + isGrounded + ", isjumping= " + animator.GetBool("IsJumping"));
     }
 
     void FlipPlayer()
@@ -124,7 +131,6 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
 
         }
-
     }
 
     //the stuff down here are if we wanna add an interaction system (leftovers from copying my other games code)

@@ -12,13 +12,18 @@ public class MultipletargetCamera : MonoBehaviour
     public Vector3 offset;
     public float smoothTime = .5f;
     public float maxZoom = 10f, minZoom = 40f, zoomLimiter = 50f;
+    public float moveUpWhen;
 
     private Vector3 velocity;
     private Camera cam;
+    private float closeOffset;
+    private float farOffset;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
+        closeOffset = offset.y ;
+        farOffset = offset.y;
     }
 
     private void FixedUpdate()
@@ -50,6 +55,9 @@ public class MultipletargetCamera : MonoBehaviour
     void Move()
     {
         Vector3 centrePoint = getCentrePoint();
+
+        offset = new Vector3(offset.x, Mathf.Lerp(closeOffset, farOffset, (cam.orthographicSize - 7)/ 2.3f), offset.z);
+        
 
         Vector3 newPosition = centrePoint + offset;
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);

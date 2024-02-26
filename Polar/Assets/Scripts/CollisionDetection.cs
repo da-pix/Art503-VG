@@ -61,7 +61,7 @@ public class CollisionDetection : MonoBehaviour
 
             if (angle >= 0 && angle <= 10) //colliding from top
             {
-                GetComponent<PlayerController>().isRiding = collision.gameObject;
+                GetComponent<PlayerController>().Riding = collision.gameObject;
             }
             else if (angle >= 90 && angle <= 100) //colliding from sides
             {
@@ -79,7 +79,7 @@ public class CollisionDetection : MonoBehaviour
         }
         else if (collision.gameObject.tag.Equals("Pushable"))
         {
-            GetComponent<PlayerController>().isRiding = null;
+            GetComponent<PlayerController>().Riding = null;
         }
         else if (collision.gameObject.CompareTag("SelectiveBreakable"))
         {
@@ -96,16 +96,16 @@ public class CollisionDetection : MonoBehaviour
             GameManager.Instance.numOfFish++;
         }
 
-        if (collision.gameObject.name == otherPlayer.name)  //riding mom bear
+        if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)  //riding mom bear
         {
-            GetComponent<PlayerController>().isRiding = collision.gameObject;
+            GetComponent<PlayerController>().Riding = collision.gameObject;
         }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == otherPlayer.name)
         {
-            GetComponent<PlayerController>().isRiding = null;
+            GetComponent<PlayerController>().Riding = null;
         }
     }
 }
