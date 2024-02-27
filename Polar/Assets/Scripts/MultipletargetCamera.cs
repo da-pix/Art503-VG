@@ -56,7 +56,7 @@ public class MultipletargetCamera : MonoBehaviour
     {
         Vector3 centrePoint = getCentrePoint();
 
-        offset = new Vector3(offset.x, Mathf.Lerp(closeOffset, farOffset, (cam.orthographicSize - 7)/ 2.3f), offset.z);
+        //offset = new Vector3(offset.x, Mathf.Lerp(closeOffset, farOffset, (cam.orthographicSize - 7)/ 2.3f), offset.z);
         
 
         Vector3 newPosition = centrePoint + offset;

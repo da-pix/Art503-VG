@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -10,6 +11,23 @@ public class UIManager : MonoBehaviour
     public GameObject hearts;
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject tutUI;
+    public bool playTut;
+
+    private void Start()
+    {
+        if (playTut)
+            StartCoroutine(PlayTut());
+    }
+
+    private IEnumerator PlayTut()
+    {
+        Time.timeScale = 0f;
+        tutUI.SetActive(true);
+        yield return new WaitForSecondsRealtime(4);
+        tutUI.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
     void Update()
     {
