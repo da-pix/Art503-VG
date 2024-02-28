@@ -3158,8 +3158,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0577e026079257e4382e52c2b751d9c9, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 790617219, guid: 24ac9704f355cfa4c8ed6a24bb8897f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3178,7 +3178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 529900553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.5, y: -4.935, z: 0}
+  m_LocalPosition: {x: -18.5, y: -4.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3326,8 +3326,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.49999997}
-    oldSize: {x: 3, y: 2.2173913}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3335,11 +3335,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -1.4, y: -1}
-      - {x: 0.9, y: -1}
-      - {x: 0.9, y: 0.8}
-      - {x: 0.5, y: 0.8}
-      - {x: 0.5, y: 0.37}
+    - - {x: -1.4, y: -1.36}
+      - {x: 0.7, y: -1.36}
+      - {x: 0.7, y: 0.8}
+      - {x: 0.38, y: 0.8}
+      - {x: 0.38, y: 0.37}
       - {x: -1.4, y: 0.37}
   m_UseDelaunayMesh: 0
 --- !u!60 &529900562
@@ -3377,8 +3377,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.49999997}
-    oldSize: {x: 3, y: 2.2173913}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3388,10 +3388,10 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -1.35, y: 0.4}
       - {x: -1.35, y: 0.2}
-      - {x: 0.85, y: 0.2}
-      - {x: 0.85, y: 0.83}
-      - {x: 0.5, y: 0.83}
-      - {x: 0.5, y: 0.4}
+      - {x: 0.65, y: 0.2}
+      - {x: 0.65, y: 0.83}
+      - {x: 0.38, y: 0.83}
+      - {x: 0.38, y: 0.4}
   m_UseDelaunayMesh: 0
 --- !u!95 &529900563
 Animator:
@@ -15536,7 +15536,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -787874749, guid: d817719c9ecf7154d9dd66635f0f28c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15998,7 +15998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075158833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: -0.98, z: 0}
+  m_LocalPosition: {x: -0.3, y: -1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73663,7 +73663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1090891193160494111, guid: eed9e1b17fb1eb54a9e0ca96bea6f3ee, type: 3}
       propertyPath: playTut
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3906183097710836266, guid: eed9e1b17fb1eb54a9e0ca96bea6f3ee, type: 3}
       propertyPath: m_Name
