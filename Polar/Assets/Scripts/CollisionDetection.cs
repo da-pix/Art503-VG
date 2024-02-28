@@ -12,6 +12,7 @@ public class CollisionDetection : MonoBehaviour
     public UIManager uim;
     public GameObject otherPlayer;
     public Camera cam;
+    public float temp;
 
     private void Awake()
     {
@@ -21,20 +22,7 @@ public class CollisionDetection : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.2f, killLayer) && groundCheck.gameObject.activeSelf)
-        {
-            //transform.position = new Vector2(respawnCoords.x,respawnCoords.y);   **could use if we add respawn checkpoints
-            if (otherPlayer.gameObject.activeSelf)
-            {
-                uim.LoseHeart();
-                Debug.Log("only 2");
-                StartCoroutine(SafeRespawn());
-            }
-            else
-            {
-                GameManager.Instance.GameOver("Only one of you made it out");
-            }
-        }
+
     }
 
     private IEnumerator SafeRespawn()                                          // Ensures the other player is grounded to respawn them there
@@ -47,16 +35,19 @@ public class CollisionDetection : MonoBehaviour
         else
         {
             GetComponent<SpriteRenderer>().enabled = false;
-            groundCheck.gameObject.SetActive(false);
+            //groundCheck.gameObject.SetActive(false);
+            GetComponent<PolygonCollider2D>().enabled = false;
             cam.GetComponent<MultipletargetCamera>().targets.Remove(transform);
-            while (!groundCheck.gameObject.activeSelf)
+            while (!GetComponent<SpriteRenderer>().enabled == true)
             {
                 if (otherPlayer.GetComponent<PlayerController>().isGrounded)
                 {
                     transform.position = otherPlayer.transform.position;
                     cam.GetComponent<MultipletargetCamera>().targets.Add(transform);
-                    groundCheck.gameObject.SetActive(true);
+                    //groundCheck.gameObject.SetActive(true);
                     GetComponent<SpriteRenderer>().enabled = true;
+                    GetComponent<PolygonCollider2D>().enabled = true;
+
                 }
                 yield return null;
             }
@@ -87,29 +78,42 @@ public class CollisionDetection : MonoBehaviour
             Vector3 hit = collision.GetContact(0).normal;
             float angle = Vector3.Angle(hit, Vector3.up);
 
-            if (angle >= 0 && angle <= 10)                                  // colliding from top (ride moving object)
+            if (angle >= 0 && angle <= 10)                                  // Colliding from top (ride moving object)
             {
                 GetComponent<PlayerController>().Riding = collision.gameObject;
             }
-            else if (angle >= 90 && angle <= 100)                           // colliding from sides (push object)
+            else if (angle >= 90 && angle <= 100)                           // Colliding from sides (push object)
             {
                 collision.transform.GetComponent<Pushable>().Pushed(gameObject);
             }
+        }
+        else if (collision.gameObject.CompareTag("HurtPlayer"))                  // Collison with an enemy
+        {
+            if (otherPlayer.gameObject.activeSelf)
+            {
+                uim.LoseHeart();
+                StartCoroutine(SafeRespawn());
+            }
+            else
+            {
+                GameManager.Instance.GameOver("Only one of you made it out");
+            }
+
         }
 
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Breakable"))                   // stopped colliding with breakable object
+        if (collision.gameObject.CompareTag("Breakable"))                   // Stopped colliding with breakable object
         {
             GetComponent<PlayerController>().isOnIce = false;
         }
-        else if (collision.gameObject.tag.Equals("Pushable"))               // stopped colliding with pushable object
+        else if (collision.gameObject.tag.Equals("Pushable"))               // Stopped colliding with pushable object
         {
             GetComponent<PlayerController>().Riding = null;
         }
-        else if (collision.gameObject.CompareTag("SelectiveBreakable"))     // stopped colliding with selective breakable object
+        else if (collision.gameObject.CompareTag("SelectiveBreakable"))     // Stopped colliding with selective breakable object
         {
             GetComponent<PlayerController>().isOnIce = false;
         }
@@ -124,7 +128,7 @@ public class CollisionDetection : MonoBehaviour
             GameManager.Instance.numOfFish++;
         }
 
-        else if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)  // riding mom bear
+        else if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)  // Riding mom bear
         {
             GetComponent<PlayerController>().Riding = collision.gameObject;
         }

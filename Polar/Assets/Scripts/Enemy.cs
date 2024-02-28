@@ -14,8 +14,6 @@ public class Enemy : MonoBehaviour
     private Transform groundCheck;
     private GameObject jumpT;
 
-
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -23,9 +21,14 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         groundCheck = transform.GetChild(0);
         jumpT = transform.GetChild(1).gameObject;
+
+        if (shouldJump)
+        {
+            transform.position = transform.position - new Vector3(0, 2.5f, 0);
+        }
     }
 
-    private IEnumerator JumpUp()
+    public IEnumerator JumpUp()
     {
         bc.enabled = false;
         rb.AddForce(new Vector2(0f, jumpForce));
@@ -44,12 +47,14 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && shouldJump)
         {
             //Destroy(jumpT);
             jumpT.SetActive(false);
+            shouldJump = false;
             rb.bodyType = RigidbodyType2D.Dynamic;
             StartCoroutine(JumpUp());
         }
     }
+
 }

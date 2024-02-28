@@ -9,7 +9,7 @@ TagManager:
   - Fish
   - Icey
   - Pushable
-  - Enemy
+  - HurtPlayer
   layers:
   - Default
   - TransparentFX
@@ -23,7 +23,7 @@ TagManager:
   - Player Baby
   - Player Mom
   - Collectable
-  - Enemy
+  - 
   - 
   - 
   - 
