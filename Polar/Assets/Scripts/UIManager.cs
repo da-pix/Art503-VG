@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
                 Pause();
             }
         }
+
+
     }
 
     public void LoseHeart()

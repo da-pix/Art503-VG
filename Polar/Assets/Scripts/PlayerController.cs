@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        Debug.Log(isGrounded);
     }
 
     void FlipPlayer()

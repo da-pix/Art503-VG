@@ -9,6 +9,7 @@ TagManager:
   - Fish
   - Icey
   - Pushable
+  - Enemy
   layers:
   - Default
   - TransparentFX

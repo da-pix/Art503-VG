@@ -613,7 +613,7 @@ RectTransform:
   - {fileID: 7270733221985309821}
   - {fileID: 1174584425277731609}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -699,7 +699,7 @@ MonoBehaviour:
   hearts: {fileID: 6280074809210542192}
   pauseMenuUI: {fileID: 7630072511227219657}
   tutUI: {fileID: 8686008093281837277}
-  playTut: 1
+  playTut: 0
 --- !u!1 &4036581369372468380
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,7 +2363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8572868255792667687
 RectTransform:
   m_ObjectHideFlags: 0
