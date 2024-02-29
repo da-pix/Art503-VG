@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
             {
                 isAirBorne = true;
                 bc.enabled = true;
+                sr.sortingOrder = 2;
 
             }
             yield return null;
