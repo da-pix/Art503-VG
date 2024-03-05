@@ -113,8 +113,8 @@ TextureImporter:
       name: Polar_Breakable2_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 224
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d936e354c27ce394c9e9517b91e15cc4
-      internalID: 1313640304
+      spriteID: d74b3467ddcf404499664ce8759d64b4
+      internalID: -2009101282
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,8 @@ TextureImporter:
       name: Polar_Breakable2_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 240
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4d3d7b42beaccb4881fcc3ee9ac7bb8
-      internalID: -228768430
+      spriteID: 9c0823c4e39e9444a995505eabd85685
+      internalID: 1347852587
       vertices: []
       indices: 
       edges: []
@@ -155,8 +155,8 @@ TextureImporter:
       name: Polar_Breakable2_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 48
+        x: 256
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a2566b596016744ca076bbc318b1225
-      internalID: -388575540
+      spriteID: e8abc58ffab4edc47853da51e52aec82
+      internalID: 592783748
       vertices: []
       indices: 
       edges: []
@@ -176,8 +176,8 @@ TextureImporter:
       name: Polar_Breakable2_3
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
+        x: 272
+        y: 112
         width: 16
         height: 16
       alignment: 0
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd45bf2cebfdb7143818f9292f78b797
-      internalID: -173929078
+      spriteID: f00cc20f7181f2e4abadde571f1bbb6d
+      internalID: -384733929
       vertices: []
       indices: 
       edges: []
@@ -197,8 +197,8 @@ TextureImporter:
       name: Polar_Breakable2_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 224
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a507463691517dc44bd66c72f2bdfa83
-      internalID: 903430224
+      spriteID: 4b33d46fbf6a22043b7476d35d3ac083
+      internalID: 759251253
       vertices: []
       indices: 
       edges: []
@@ -218,8 +218,8 @@ TextureImporter:
       name: Polar_Breakable2_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 240
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a56b715ee038282499e6839543e560b4
-      internalID: -1600966587
+      spriteID: 22355eecdf8d7e24a9a8792ab77d27ad
+      internalID: -1649877898
       vertices: []
       indices: 
       edges: []
@@ -239,8 +239,8 @@ TextureImporter:
       name: Polar_Breakable2_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 256
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9017dd35f02b9d64b9085bfcb58b8d57
-      internalID: 577382094
+      spriteID: 95758d69ab2006e438d0faaaf8cea3e0
+      internalID: -577480065
       vertices: []
       indices: 
       edges: []
@@ -260,8 +260,8 @@ TextureImporter:
       name: Polar_Breakable2_7
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
+        x: 272
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b51b372b68aaece459cf754dff39dc1a
-      internalID: -502961041
+      spriteID: cfae7e91d894f9a4dab5e1e02bb3e638
+      internalID: 866446674
       vertices: []
       indices: 
       edges: []
@@ -281,8 +281,8 @@ TextureImporter:
       name: Polar_Breakable2_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 192
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a189c8aaf969c846807529be24a666c
-      internalID: 1508061098
+      spriteID: d4be5d66bf2ab3f488cb765d957d6173
+      internalID: -2069260509
       vertices: []
       indices: 
       edges: []
@@ -302,8 +302,8 @@ TextureImporter:
       name: Polar_Breakable2_9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 208
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37d557bc4385b3e42a53daff54abf5b4
-      internalID: 464994340
+      spriteID: 103dfb58c29531642aa0c35b1ddccca9
+      internalID: 1148935826
       vertices: []
       indices: 
       edges: []
@@ -323,8 +323,8 @@ TextureImporter:
       name: Polar_Breakable2_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
+        x: 224
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -334,8 +334,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b82764afcc92b5e4bb0c5b57ca7d53ea
-      internalID: 1195214336
+      spriteID: b41bc7275d81b4144ba9d6f5c28474c6
+      internalID: -1717015806
       vertices: []
       indices: 
       edges: []
@@ -344,8 +344,8 @@ TextureImporter:
       name: Polar_Breakable2_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 240
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -355,8 +355,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36ec326fc71112847b34e70ed457b47a
-      internalID: 1788546981
+      spriteID: 08f5d4d64e74fb8419bd3ba7b3b95a8a
+      internalID: 1355930490
       vertices: []
       indices: 
       edges: []
@@ -365,8 +365,8 @@ TextureImporter:
       name: Polar_Breakable2_12
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
+        x: 256
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -376,8 +376,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e83a90cbb5a1d54ba39d9601f3173cb
-      internalID: 1152110824
+      spriteID: cb73336e9f9e4cf4bb0e1f0de99b55da
+      internalID: 1321652444
       vertices: []
       indices: 
       edges: []
@@ -386,8 +386,8 @@ TextureImporter:
       name: Polar_Breakable2_13
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
+        x: 272
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -397,8 +397,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d151044529af3b244a1181952af72c62
-      internalID: 94367469
+      spriteID: 25dad7302bb1c0f44b9feb18d08d572b
+      internalID: 250571153
       vertices: []
       indices: 
       edges: []
@@ -407,8 +407,8 @@ TextureImporter:
       name: Polar_Breakable2_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 192
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -418,8 +418,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ded959211896874298b42f455a3c1b1
-      internalID: 1549919861
+      spriteID: 5709c51edef230848b21689649b3d6bb
+      internalID: -2126236464
       vertices: []
       indices: 
       edges: []
@@ -428,8 +428,8 @@ TextureImporter:
       name: Polar_Breakable2_15
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 208
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -439,8 +439,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbdd09811cafe46489c2ec8dca58a3ea
-      internalID: 714011142
+      spriteID: 6938b0d844514c042b30267d16ad6b48
+      internalID: 1199515969
       vertices: []
       indices: 
       edges: []
@@ -449,8 +449,8 @@ TextureImporter:
       name: Polar_Breakable2_16
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 224
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -460,8 +460,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90a5488aad4355a46acb3c384b854cb4
-      internalID: -821599563
+      spriteID: c0696145db77d04409d94ce1ef8d2dd1
+      internalID: -250739481
       vertices: []
       indices: 
       edges: []
@@ -470,8 +470,8 @@ TextureImporter:
       name: Polar_Breakable2_17
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 240
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -481,8 +481,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56a1c05a63cb0704c9b41b7e20fd9e83
-      internalID: 1858908617
+      spriteID: 3f995365068600742be8659c1b710571
+      internalID: 748102164
       vertices: []
       indices: 
       edges: []
@@ -491,8 +491,8 @@ TextureImporter:
       name: Polar_Breakable2_18
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
+        x: 256
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -502,8 +502,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f2c0921d95236447b3d0234ab852a6c
-      internalID: -1153984618
+      spriteID: 9e0a586e8e9f91b48b96d6053f4c8bf2
+      internalID: 1868841310
       vertices: []
       indices: 
       edges: []
@@ -512,8 +512,8 @@ TextureImporter:
       name: Polar_Breakable2_19
       rect:
         serializedVersion: 2
-        x: 80
-        y: 0
+        x: 272
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -523,8 +523,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d43f1861698af354eacd6f4a60b5bb4c
-      internalID: -926536513
+      spriteID: 9841c4e0cd57cd74e8704f6a0473e199
+      internalID: 1252175647
       vertices: []
       indices: 
       edges: []
@@ -540,26 +540,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Polar_Breakable2_0: 1313640304
-      Polar_Breakable2_1: -228768430
-      Polar_Breakable2_10: 1195214336
-      Polar_Breakable2_11: 1788546981
-      Polar_Breakable2_12: 1152110824
-      Polar_Breakable2_13: 94367469
-      Polar_Breakable2_14: 1549919861
-      Polar_Breakable2_15: 714011142
-      Polar_Breakable2_16: -821599563
-      Polar_Breakable2_17: 1858908617
-      Polar_Breakable2_18: -1153984618
-      Polar_Breakable2_19: -926536513
-      Polar_Breakable2_2: -388575540
-      Polar_Breakable2_3: -173929078
-      Polar_Breakable2_4: 903430224
-      Polar_Breakable2_5: -1600966587
-      Polar_Breakable2_6: 577382094
-      Polar_Breakable2_7: -502961041
-      Polar_Breakable2_8: 1508061098
-      Polar_Breakable2_9: 464994340
+      Polar_Breakable2_0: -2009101282
+      Polar_Breakable2_1: 1347852587
+      Polar_Breakable2_10: -1717015806
+      Polar_Breakable2_11: 1355930490
+      Polar_Breakable2_12: 1321652444
+      Polar_Breakable2_13: 250571153
+      Polar_Breakable2_14: -2126236464
+      Polar_Breakable2_15: 1199515969
+      Polar_Breakable2_16: -250739481
+      Polar_Breakable2_17: 748102164
+      Polar_Breakable2_18: 1868841310
+      Polar_Breakable2_19: 1252175647
+      Polar_Breakable2_2: 592783748
+      Polar_Breakable2_3: -384733929
+      Polar_Breakable2_4: 759251253
+      Polar_Breakable2_5: -1649877898
+      Polar_Breakable2_6: -577480065
+      Polar_Breakable2_7: 866446674
+      Polar_Breakable2_8: -2069260509
+      Polar_Breakable2_9: 1148935826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

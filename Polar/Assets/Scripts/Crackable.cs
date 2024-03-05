@@ -26,13 +26,9 @@ public class Crackable : MonoBehaviour
     private IEnumerator Crack()
     {
         yield return new WaitForSeconds(timeDelay / 3);
-        tm.enabled = false;
         crack1.SetActive(true);
-        Debug.Log("cracked Stage: 1");
         yield return new WaitForSeconds(timeDelay / 3);
-        crack1.SetActive(false);
         crack2.SetActive(true);
-        Debug.Log("cracked Stage: 2");
         yield return new WaitForSeconds(timeDelay / 3);
         Destroy(gameObject);
     }
