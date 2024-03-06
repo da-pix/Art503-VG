@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class CollisionDetection : MonoBehaviour
 {
@@ -132,12 +133,20 @@ public class CollisionDetection : MonoBehaviour
         {
             GetComponent<PlayerController>().Riding = collision.gameObject;
         }
+        else if (collision.gameObject.CompareTag("FakeWall"))               // Check if going into fake wall
+        {
+            collision.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, .35f);
+        }
     }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.name == otherPlayer.name)                  // Stopped riding mom bear
         {
             GetComponent<PlayerController>().Riding = null;
+        }
+        else if (collision.gameObject.CompareTag("FakeWall"))               // Left the wake wall
+        {
+            collision.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);
         }
     }
 }

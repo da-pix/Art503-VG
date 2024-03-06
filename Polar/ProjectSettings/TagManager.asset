@@ -11,6 +11,7 @@ TagManager:
   - Pushable
   - HurtPlayer
   - Tip
+  - FakeWall
   layers:
   - Default
   - TransparentFX

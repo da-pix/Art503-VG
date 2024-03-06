@@ -13,11 +13,14 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenuUI;
     public GameObject tutUI;
     public bool playTut;
+    public GameObject collectableFish;
 
     private void Start()
     {
         if (playTut)
             StartCoroutine(PlayTut());
+
+        GameManager.Instance.totalFish = collectableFish.transform.childCount;
     }
 
     private IEnumerator PlayTut()

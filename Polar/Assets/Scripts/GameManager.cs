@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int numOfHearts;
     public int numOfFish;
+    public int totalFish;
     public string deathMsg;
     private string curentScene;
     public string prevScene;

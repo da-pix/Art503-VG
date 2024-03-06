@@ -9,7 +9,7 @@ public class LevelEnd : MonoBehaviour
     public TextMeshProUGUI fishText;
     void Start()
     {
-        fishText.text = "Fish Collected: \n" + GameManager.Instance.numOfFish.ToString() + "!";
+        fishText.text = "Fish Collected: \n" + GameManager.Instance.numOfFish.ToString() + " / " + GameManager.Instance.totalFish.ToString();
     }
     public void LoadGame()
     {
