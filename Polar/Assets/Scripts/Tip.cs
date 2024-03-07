@@ -13,7 +13,7 @@ public class Tip : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             tipBox.SetActive(true);
-            tipBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = "Tip: " + tip;
+            tipBox.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = tip;
         }
     }
     void OnTriggerExit2D(Collider2D collision)

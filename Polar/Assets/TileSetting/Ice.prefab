@@ -191,7 +191,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 60
-      m_TileSpriteIndex: 56
+      m_TileSpriteIndex: 58
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -934,10 +934,12 @@ Tilemap:
     m_Data: {fileID: -1454822047, guid: a6527bcc9799ee84082f29d52b80b28f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1252175647, guid: 541ab9a03b4d6a9448ef996ca76e40f1, type: 3}
-  - m_RefCount: 2
+  - m_RefCount: 1
     m_Data: {fileID: 1075081161, guid: b0e5757e94c68ed41b0c7efbebafc356, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -814844398, guid: 65794653cf9048943b66c9123b4be841, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 1966436698, guid: b0e5757e94c68ed41b0c7efbebafc356, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 61
     m_Data:
@@ -1033,7 +1035,7 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!114 &7716146246548561247
+--- !u!114 &5887262993792049772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

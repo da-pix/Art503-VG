@@ -90,14 +90,17 @@ public class CollisionDetection : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("HurtPlayer"))                  // Collison with an enemy
         {
-            if (otherPlayer.gameObject.activeSelf)
+            if (otherPlayer.gameObject.activeSelf && otherPlayer.GetComponent<SpriteRenderer>().isVisible)
             {
                 uim.LoseHeart();
                 StartCoroutine(SafeRespawn());
             }
             else
             {
-                GameManager.Instance.GameOver("Only one of you made it out");
+                if (!otherPlayer.gameObject.activeSelf)
+                    GameManager.Instance.GameOver("Only one of you made it out");
+                else
+                    GameManager.Instance.GameOver("Both bears succumbed to the artic");
             }
 
         }
@@ -140,7 +143,7 @@ public class CollisionDetection : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == otherPlayer.name)                  // Stopped riding mom bear
+        if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)                  // Stopped riding mom bear
         {
             GetComponent<PlayerController>().Riding = null;
         }
