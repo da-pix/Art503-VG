@@ -76,8 +76,7 @@ public class UIManager : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        GameManager.Instance.GoPrevScene();
-        //SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.MainMenu();
     }
 
     public void QuitGame()

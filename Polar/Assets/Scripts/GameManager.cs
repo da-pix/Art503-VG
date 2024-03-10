@@ -46,6 +46,14 @@ public class GameManager : MonoBehaviour
         Resetfish();
         ResetHearts();
     }
+
+    public void MainMenu()
+    {
+        Resetfish();
+        ResetHearts();
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void GoNextScene()
     {
         prevScene = SceneManager.GetActiveScene().name;
