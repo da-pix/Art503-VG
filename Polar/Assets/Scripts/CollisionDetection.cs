@@ -14,10 +14,12 @@ public class CollisionDetection : MonoBehaviour
     public GameObject otherPlayer;
     public Camera cam;
     public float temp;
+    AudioManager audioManager;
 
     private void Awake()
     {
         groundCheck = transform.GetChild(0);
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
     }
 
@@ -90,6 +92,7 @@ public class CollisionDetection : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("HurtPlayer"))                  // Collison with an enemy
         {
+            audioManager.PlayplayerSFX(audioManager.death);
             if (otherPlayer.gameObject.activeSelf && otherPlayer.GetComponent<SpriteRenderer>().isVisible)
             {
                 uim.LoseHeart();
@@ -128,6 +131,7 @@ public class CollisionDetection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Fish"))                        // Check if collecting fish
         {
+            audioManager.PlaySFX(audioManager.collectFish);
             Destroy(collision.gameObject);
             GameManager.Instance.numOfFish++;
         }

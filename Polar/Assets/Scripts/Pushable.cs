@@ -19,4 +19,10 @@ public class Pushable : MonoBehaviour
             transform.GetComponent<Rigidbody2D>().mass = invalidPush;
         }
     }
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Breakable"))                     // Collison with a breakable object
+                collision.gameObject.GetComponent<Crackable>().StartCrack();
+
+        }
 }

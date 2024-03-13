@@ -16,6 +16,7 @@ public class MultipletargetCamera : MonoBehaviour
 
     private Vector3 velocity;
     private Camera cam;
+    private Vector3 rideAdj;
     private float closeOffset;
     private float farOffset;
 
@@ -57,7 +58,18 @@ public class MultipletargetCamera : MonoBehaviour
         Vector3 centrePoint = getCentrePoint();
 
         //offset = new Vector3(offset.x, Mathf.Lerp(closeOffset, farOffset, (cam.orthographicSize - 7)/ 2.3f), offset.z);
-        
+      
+       //f (!rideAdj && targets.Count > 1 && targets[1].GetComponent<PlayerController>().Riding == targets[0])
+        //
+       //   offset = new Vector3(offset.x, offset.y - 1.5f, offset.z);
+       //   rideAdj = true;
+       //
+       //lse
+       //
+       //   offset = new Vector3(offset.x, offset.y - 1.5f, offset.z);
+        //  rideAdj = false;
+       //
+
 
         Vector3 newPosition = centrePoint + offset;
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);

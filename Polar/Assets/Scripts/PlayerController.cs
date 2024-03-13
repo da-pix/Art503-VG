@@ -24,9 +24,12 @@ public class PlayerController : MonoBehaviour
     public GameObject Riding = null;
     public bool isOnIce = false;
     public ParticleSystem trail;
+    private AudioSource footstepSrc;
 
     [SerializeField] PlayerInput playInput;
     Rigidbody2D rb;
+    AudioManager audioManager;
+
 
     private void OnValidate()
     {
@@ -38,13 +41,18 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         groundCheck = transform.GetChild(0);
+        footstepSrc = transform.GetChild(0).GetComponent<AudioSource>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(jumpKey) && isGrounded)
+        {
+            audioManager.PlayplayerSFX(audioManager.jump);
             Jump();
+        }
 
         //       if (Input.GetKeyDown(KeyCode.E))
         //           CheckInteraction();
@@ -57,6 +65,7 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
         Playermove();
         FlipPlayer();
+        Checktrail();
     }
 
     void Playermove()
@@ -74,14 +83,12 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(new Vector2(iceMoveSpeed * xInput, rb.velocity.y));
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-                playtrail();
 
             }
             else
             {
                 rb.velocity = new Vector2(moveSpeed * xInput, rb.velocity.y);
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-                playtrail();
 
             }
 
@@ -101,7 +108,6 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         anim.SetBool("IsJumping", true);
-        playtrail();
 
         if (Riding != null)
             rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, jumpForce);
@@ -134,10 +140,18 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    void playtrail()
+    void Checktrail()
+    {
+        if (anim.GetFloat("Speed") > 0 && !anim.GetBool("IsJumping"))
         {
-                trail.Play();
+            trail.Play();
+            footstepSrc.enabled = true;
         }
+        else
+            footstepSrc.enabled = false;
+
+
+    }
 
 
 

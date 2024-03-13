@@ -12,6 +12,7 @@ TagManager:
   - HurtPlayer
   - Tip
   - FakeWall
+  - Audio
   layers:
   - Default
   - TransparentFX
