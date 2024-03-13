@@ -147,7 +147,7 @@ public class CollisionDetection : MonoBehaviour
         {
             GetComponent<PlayerController>().Riding = null;
         }
-        else if (collision.gameObject.CompareTag("FakeWall"))               // Left the wake wall
+        else if (collision.gameObject.CompareTag("FakeWall"))               // Left the fake wall
         {
             collision.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);
         }

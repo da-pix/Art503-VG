@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public GameObject cannotRide;
     public GameObject Riding = null;
     public bool isOnIce = false;
+    public ParticleSystem trail;
 
     [SerializeField] PlayerInput playInput;
     Rigidbody2D rb;
@@ -66,7 +67,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, 0) + new Vector2(moveSpeed * xInput, rb.velocity.y);
                 anim.SetFloat("Speed", 0f);
-
             }
 
 
@@ -74,12 +74,14 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(new Vector2(iceMoveSpeed * xInput, rb.velocity.y));
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+                playtrail();
 
             }
             else
             {
                 rb.velocity = new Vector2(moveSpeed * xInput, rb.velocity.y);
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+                playtrail();
 
             }
 
@@ -96,9 +98,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Jump()
+    void Jump()
     {
         anim.SetBool("IsJumping", true);
+        playtrail();
 
         if (Riding != null)
             rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, jumpForce);
@@ -131,6 +134,12 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    void playtrail()
+        {
+                trail.Play();
+        }
+
+
 
     //the stuff down here are if we wanna add an interaction system (leftovers from copying my other games code)
 
