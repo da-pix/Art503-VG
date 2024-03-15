@@ -25,6 +25,8 @@ public class ThinIce : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
         obj.GetComponent<PlayerController>().isOnIce = false;
+        obj.GetComponent<CollisionDetection>().otherPlayer.GetComponent<PlayerController>().isOnIce = false; // quickfix
+
         Destroy(gameObject);
     }
 

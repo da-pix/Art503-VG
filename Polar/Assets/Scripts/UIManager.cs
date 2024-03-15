@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -14,17 +15,29 @@ public class UIManager : MonoBehaviour
     public GameObject tutUI;
     public bool playTut;
     public GameObject collectableFish;
+    public bool playCS;
+    public PlayableDirector cutScene;
 
     private void Start()
     {
-        if (playTut)
-            StartCoroutine(PlayTut());
+        if (playCS)
+        {
+            cutScene.Play();
+            
+            if (playTut)
+                StartCoroutine(PlayTut((float)cutScene.duration));
+        }
+        else if (!playCS && playTut)
+            StartCoroutine(PlayTut(0f));
+
+
 
         GameManager.Instance.totalFish = collectableFish.transform.childCount;
     }
 
-    private IEnumerator PlayTut()
+    private IEnumerator PlayTut( float starDelay)
     {
+        yield return new WaitForSeconds(starDelay);
         Time.timeScale = 0f;
         tutUI.SetActive(true);
         yield return new WaitForSecondsRealtime(4);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,7 @@ public class Finish : MonoBehaviour
             }
             if (playersReached == 2)
             {
-                GameManager.Instance.GoNextScene();
+                GameManager.Instance.LevelEnd();
                 //GameManager.Instance.LoadScene(GameManager.Instance.nextScene);
                 //SceneManager.LoadScene("tut End");
             }

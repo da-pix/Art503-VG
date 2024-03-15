@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public Animator anim;
 
     public int numOfHearts;
     public int numOfFish;
@@ -42,29 +43,55 @@ public class GameManager : MonoBehaviour
     {
         deathMsg = msg;
         prevScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("GameOver");
         Resetfish();
         ResetHearts();
+        StartCoroutine(ChangeLvlFade("GameOver"));
+        //SceneManager.LoadScene("GameOver");
+
     }
 
     public void MainMenu()
     {
         Resetfish();
         ResetHearts();
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(ChangeLvlFade("MainMenu"));
+        //SceneManager.LoadScene("MainMenu");
+    }
+
+    public void LevelEnd()
+    {
+        StartCoroutine(ChangeLvlFade("LevelEnd"));
+        //SceneManager.LoadScene("LevelEnd");
+    }
+
+    IEnumerator ChangeLvlFade( String nxtlvl)
+    {
+        anim.SetBool("Fade", true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(nxtlvl);
+        UnFade();
+    }
+
+    public void UnFade()
+    {
+        anim.SetBool("Fade", false);
     }
 
     public void GoNextScene()
     {
         prevScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(nextScene);
+        Resetfish();
         ResetHearts();
+        StartCoroutine(ChangeLvlFade(nextScene));
+        //SceneManager.LoadScene(nextScene);
     }
     public void GoPrevScene()
     {
         nextScene = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(prevScene);
         Resetfish();
         ResetHearts();
+        StartCoroutine(ChangeLvlFade(prevScene));
+        //SceneManager.LoadScene(prevScene);
+
     }
 }

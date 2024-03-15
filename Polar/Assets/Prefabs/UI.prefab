@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 940645750052084427}
   - component: {fileID: 6504665504886315548}
   - component: {fileID: 3221953788988803801}
+  - component: {fileID: 4420936574836193550}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -426,6 +427,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4420936574836193550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529582490712178822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1adb75ff9f4265d4d9b601e714dd8760, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2579383778260143735
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8710440e3428fb24da61909006c3205f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc3f04e61d358fc4a93ab0507542b570, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -726,6 +756,7 @@ GameObject:
   - component: {fileID: 7823253719340005488}
   - component: {fileID: 8036056711320911124}
   - component: {fileID: 390072458344285818}
+  - component: {fileID: 3353480530112107728}
   m_Layer: 5
   m_Name: ResumeButton
   m_TagString: Untagged
@@ -848,6 +879,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3353480530112107728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329223589012878255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1adb75ff9f4265d4d9b601e714dd8760, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3362592300660735824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1067,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1047,7 +1107,7 @@ MonoBehaviour:
   hearts: {fileID: 6280074809210542192}
   pauseMenuUI: {fileID: 7630072511227219657}
   tutUI: {fileID: 8686008093281837277}
-  playTut: 0
+  playTut: 1
   collectableFish: {fileID: 0}
 --- !u!1 &4036581369372468380
 GameObject:
@@ -2006,6 +2066,7 @@ GameObject:
   - component: {fileID: 192061612899511478}
   - component: {fileID: 8320226158123774540}
   - component: {fileID: 3539034099189140844}
+  - component: {fileID: 3499208411620268005}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -2128,6 +2189,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3499208411620268005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6615002776360204506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+          m_MethodName: PlayOneShot
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 8300000, guid: 1adb75ff9f4265d4d9b601e714dd8760, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6706580421147018212
 GameObject:
   m_ObjectHideFlags: 0
