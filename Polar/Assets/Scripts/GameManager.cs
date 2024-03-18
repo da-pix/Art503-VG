@@ -46,8 +46,6 @@ public class GameManager : MonoBehaviour
         Resetfish();
         ResetHearts();
         StartCoroutine(ChangeLvlFade("GameOver"));
-        //SceneManager.LoadScene("GameOver");
-
     }
 
     public void MainMenu()
@@ -55,13 +53,12 @@ public class GameManager : MonoBehaviour
         Resetfish();
         ResetHearts();
         StartCoroutine(ChangeLvlFade("MainMenu"));
-        //SceneManager.LoadScene("MainMenu");
     }
 
     public void LevelEnd()
     {
+        prevScene = SceneManager.GetActiveScene().name;
         StartCoroutine(ChangeLvlFade("LevelEnd"));
-        //SceneManager.LoadScene("LevelEnd");
     }
 
     IEnumerator ChangeLvlFade( String nxtlvl)
@@ -83,7 +80,6 @@ public class GameManager : MonoBehaviour
         Resetfish();
         ResetHearts();
         StartCoroutine(ChangeLvlFade(nextScene));
-        //SceneManager.LoadScene(nextScene);
     }
     public void GoPrevScene()
     {
@@ -91,7 +87,5 @@ public class GameManager : MonoBehaviour
         Resetfish();
         ResetHearts();
         StartCoroutine(ChangeLvlFade(prevScene));
-        //SceneManager.LoadScene(prevScene);
-
     }
 }

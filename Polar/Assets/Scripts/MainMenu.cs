@@ -13,25 +13,22 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.nextScene = nxtLvl;
+        src.clip = onClickSfx;
     }
 
     public void LoadGame()
     {
-        src.clip = onClickSfx;
         src.Play();
         GameManager.Instance.GoNextScene();
-        //SceneManager.LoadScene("Tutorial");
     }
     public void QuitGame()
     {
-        src.clip = onClickSfx;
         src.Play();
         Application.Quit();
         Debug.Log("Game is quitting...");
     }
     public void DisplayCredits()
     {
-        src.clip = onClickSfx;
         src.Play();
         Debug.Log("Show creds");
     }

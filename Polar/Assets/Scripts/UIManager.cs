@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     public GameObject collectableFish;
     public bool playCS;
     public PlayableDirector cutScene;
+    public AudioClip onClickSfx;
+    public AudioSource src;
 
     private void Start()
     {
@@ -75,6 +77,8 @@ public class UIManager : MonoBehaviour
     }
     public void Resume()
     {
+        src.clip = onClickSfx;
+        src.Play();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -88,12 +92,16 @@ public class UIManager : MonoBehaviour
 
     public void LoadMenu()
     {
+        src.clip = onClickSfx;
+        src.Play();
         Time.timeScale = 1f;
         GameManager.Instance.MainMenu();
     }
 
     public void QuitGame()
     {
+        src.clip = onClickSfx;
+        src.Play();
         Application.Quit();
         Debug.Log("Game is quitting...");
     }
