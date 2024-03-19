@@ -16,14 +16,14 @@ public class MultipletargetCamera : MonoBehaviour
 
     private Vector3 velocity;
     private Camera cam;
-    private Vector3 rideAdj;
+    private bool rideAdj;
     private float closeOffset;
     private float farOffset;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
-        closeOffset = offset.y ;
+        closeOffset = offset.y;
         farOffset = offset.y;
     }
 
@@ -49,26 +49,26 @@ public class MultipletargetCamera : MonoBehaviour
         {
             bounds.Encapsulate(targets[i].position);
         }
-        //Debug.Log(bounds.size.x);
+        Debug.Log(bounds.size.x);
         return bounds.size.x;
     }
 
     void Move()
     {
         Vector3 centrePoint = getCentrePoint();
+        float yOffset;
 
-        //offset = new Vector3(offset.x, Mathf.Lerp(closeOffset, farOffset, (cam.orthographicSize - 7)/ 2.3f), offset.z);
-      
-       //f (!rideAdj && targets.Count > 1 && targets[1].GetComponent<PlayerController>().Riding == targets[0])
-        //
-       //   offset = new Vector3(offset.x, offset.y - 1.5f, offset.z);
-       //   rideAdj = true;
-       //
-       //lse
-       //
-       //   offset = new Vector3(offset.x, offset.y - 1.5f, offset.z);
-        //  rideAdj = false;
-       //
+        if (targets.Count > 1 && GetGreatestDistance() < 3f)
+        {
+            yOffset = Mathf.Lerp(1, 2.5f, GetGreatestDistance() / zoomLimiter);
+
+        }
+        else
+            yOffset = Mathf.Lerp(2.5f, 3.75f, GetGreatestDistance() / zoomLimiter);
+
+        offset = new Vector3(offset.x, yOffset, offset.z);
+
+
 
 
         Vector3 newPosition = centrePoint + offset;

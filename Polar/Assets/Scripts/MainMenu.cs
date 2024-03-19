@@ -9,11 +9,23 @@ public class MainMenu : MonoBehaviour
     public string nxtLvl;
     public AudioClip onClickSfx;
     public AudioSource src;
+    public GameObject creds;
+    public GameObject intrface;
+    public float fadeDur;
 
     private void Start()
     {
         GameManager.Instance.nextScene = nxtLvl;
         src.clip = onClickSfx;
+    }
+
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape) && creds.activeSelf)
+        {
+            StartCoroutine(UnFade(fadeDur));
+        }
     }
 
     public void LoadGame()
@@ -30,6 +42,36 @@ public class MainMenu : MonoBehaviour
     public void DisplayCredits()
     {
         src.Play();
+        StartCoroutine(Fade(fadeDur));
         Debug.Log("Show creds");
+    }
+
+    private IEnumerator Fade(float dur)
+    {
+        float scaler = 1 / fadeDur;
+        while (intrface.GetComponent<CanvasGroup>().alpha > 0)
+        {
+            intrface.GetComponent<CanvasGroup>().alpha -= scaler;
+
+            if (intrface.GetComponent<CanvasGroup>().alpha <= .25)
+                intrface.SetActive(false);
+            yield return null;
+
+        }
+        creds.SetActive(true);
+    }
+    private IEnumerator UnFade(float dur)
+    {
+        float scaler = 1 / fadeDur;
+        creds.SetActive(false);
+
+        while (intrface.GetComponent<CanvasGroup>().alpha < 1)
+        {
+            intrface.GetComponent<CanvasGroup>().alpha += scaler;
+
+            if (intrface.GetComponent<CanvasGroup>().alpha >= .25)
+                intrface.SetActive(true);
+            yield return null;
+        }
     }
 }

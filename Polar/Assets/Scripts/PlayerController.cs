@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
-            audioManager.PlayplayerSFX(audioManager.jump);
             Jump();
         }
 
@@ -107,6 +106,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
+        audioManager.PlayplayerSFX(audioManager.jump);
         anim.SetBool("IsJumping", true);
 
         if (Riding != null)

@@ -818,8 +818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathMsgTxt: {fileID: 1515663764}
-  onClickSfx: {fileID: 0}
-  src: {fileID: 0}
+  onClickSfx: {fileID: 8300000, guid: e7c98e4ae96b33a42a7c585ff226a291, type: 3}
+  src: {fileID: 693097923}
 --- !u!1 &1112702302
 GameObject:
   m_ObjectHideFlags: 0

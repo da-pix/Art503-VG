@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 1089365525}
   - component: {fileID: 1089365524}
   - component: {fileID: 1089365526}
+  - component: {fileID: 1089365527}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1112,7 +1113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 64923a67865489a4793af51f1bb6541d, type: 3}
+  m_Sprite: {fileID: -736912111, guid: 64923a67865489a4793af51f1bb6541d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1145,6 +1146,27 @@ MonoBehaviour:
   fishText: {fileID: 139353006}
   onClickSfx: {fileID: 8300000, guid: e7c98e4ae96b33a42a7c585ff226a291, type: 3}
   src: {fileID: 1081251990}
+--- !u!95 &1089365527
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089365522}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f497aada7ec4f704ea52bb480f151570, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1112702302
 GameObject:
   m_ObjectHideFlags: 0
