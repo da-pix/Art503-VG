@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public AudioSource src;
     public GameObject creds;
     public GameObject intrface;
+    public GameObject selctMenu;
     public float fadeDur;
 
     private void Start()
@@ -26,12 +28,39 @@ public class MainMenu : MonoBehaviour
         {
             StartCoroutine(UnFade(fadeDur));
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && selctMenu.activeSelf)
+        {
+            selctMenu.SetActive(false);
+        }
     }
 
     public void LoadGame()
     {
         src.Play();
         GameManager.Instance.GoNextScene();
+    }
+
+    public void oil()
+    {
+        GameManager.Instance.isPoluted = true;
+        GameManager.Instance.playCS = true;
+        GameManager.Instance.playTut = true;
+        selctMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+        selctMenu.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+    }
+    public void clean()
+    {
+        GameManager.Instance.playCS = false;
+        GameManager.Instance.isPoluted = false;
+        GameManager.Instance.playTut = true;
+        selctMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+        selctMenu.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void ShowSelect()
+    {
+        src.Play();
+        selctMenu.SetActive(true);
     }
     public void QuitGame()
     {

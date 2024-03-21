@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private string curentScene;
     public string prevScene;
     public string nextScene;
+    public bool isPoluted;
+    public bool playTut;
+    public bool playCS;
 
     private void Awake()
     {

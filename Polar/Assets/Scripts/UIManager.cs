@@ -13,23 +13,37 @@ public class UIManager : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject tutUI;
-    public bool playTut;
     public GameObject collectableFish;
-    public bool playCS;
+    public GameObject background;
+    public GameObject oilStain;
+    public Animator water;
     public PlayableDirector cutScene;
     public AudioClip onClickSfx;
     public AudioSource src;
+    public Sprite close;
+    public Sprite far;
 
+    private void Awake()
+    {
+        if (GameManager.Instance.isPoluted)
+        {
+            background.transform.GetChild(2).GetComponent<SpriteRenderer>().sprite = far;
+            background.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite = close;
+            water.SetBool("isDirty", true);
+            oilStain.SetActive(true);
+        }
+    }
     private void Start()
     {
-        if (playCS)
+
+        if (GameManager.Instance.playCS)
         {
             cutScene.Play();
             
-            if (playTut)
+            if (GameManager.Instance.playTut)
                 StartCoroutine(PlayTut((float)cutScene.duration));
         }
-        else if (!playCS && playTut)
+        else if (!GameManager.Instance.playCS && GameManager.Instance.playTut)
             StartCoroutine(PlayTut(0f));
 
 
@@ -57,7 +71,7 @@ public class UIManager : MonoBehaviour
             {
                 Resume();
             }
-            else
+            else if(!GameIsPaused && cutScene.state != PlayState.Playing && !tutUI.activeSelf)
             {
                 Pause();
             }
@@ -85,6 +99,7 @@ public class UIManager : MonoBehaviour
     }
     void Pause()
     {
+        src.Play();
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

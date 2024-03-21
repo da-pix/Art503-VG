@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 1081251991}
   - component: {fileID: 1081251990}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,7 +1905,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1956118611}
   m_OnClick:
     m_PersistentCalls:
