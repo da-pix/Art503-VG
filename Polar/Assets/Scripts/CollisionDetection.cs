@@ -147,7 +147,7 @@ public class CollisionDetection : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)                  // Stopped riding mom bear
+        if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide && collision != null)                  // Stopped riding mom bear
         {
             GetComponent<PlayerController>().Riding = null;
         }

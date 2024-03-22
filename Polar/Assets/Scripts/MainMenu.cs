@@ -26,7 +26,8 @@ public class MainMenu : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && creds.activeSelf)
         {
-            StartCoroutine(UnFade(fadeDur));
+            intrface.SetActive(true);
+            creds.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && selctMenu.activeSelf)
         {
@@ -40,7 +41,7 @@ public class MainMenu : MonoBehaviour
         GameManager.Instance.GoNextScene();
     }
 
-    public void oil()
+    public void Oil()
     {
         GameManager.Instance.isPoluted = true;
         GameManager.Instance.playCS = true;
@@ -48,7 +49,7 @@ public class MainMenu : MonoBehaviour
         selctMenu.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         selctMenu.transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
     }
-    public void clean()
+    public void Clean()
     {
         GameManager.Instance.playCS = false;
         GameManager.Instance.isPoluted = false;
@@ -71,36 +72,9 @@ public class MainMenu : MonoBehaviour
     public void DisplayCredits()
     {
         src.Play();
-        StartCoroutine(Fade(fadeDur));
-        Debug.Log("Show creds");
-    }
-
-    private IEnumerator Fade(float dur)
-    {
-        float scaler = 1 / fadeDur;
-        while (intrface.GetComponent<CanvasGroup>().alpha > 0)
-        {
-            intrface.GetComponent<CanvasGroup>().alpha -= scaler;
-
-            if (intrface.GetComponent<CanvasGroup>().alpha <= .25)
-                intrface.SetActive(false);
-            yield return null;
-
-        }
+        intrface.SetActive(false);
         creds.SetActive(true);
-    }
-    private IEnumerator UnFade(float dur)
-    {
-        float scaler = 1 / fadeDur;
-        creds.SetActive(false);
-
-        while (intrface.GetComponent<CanvasGroup>().alpha < 1)
-        {
-            intrface.GetComponent<CanvasGroup>().alpha += scaler;
-
-            if (intrface.GetComponent<CanvasGroup>().alpha >= .25)
-                intrface.SetActive(true);
-            yield return null;
-        }
+        //StartCoroutine(Fade(fadeDur));
+        Debug.Log("Show creds");
     }
 }
