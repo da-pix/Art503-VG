@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 
-// TBH i copied a youtube tutorial so some stuff in here idek
+// TBH i copied a youtube tutorial so some stuff in here idek added a bunch tho
 public class MultipletargetCamera : MonoBehaviour
 {
     public List<Transform> targets;
@@ -13,33 +14,50 @@ public class MultipletargetCamera : MonoBehaviour
     public float smoothTime = .5f;
     public float maxZoom = 10f, minZoom = 40f, zoomLimiter = 50f;
     public float moveUpWhen;
+    public bool lockedCam = false;
+    public Vector3 lockedPos;
+    public float lockedZoom;
 
     private Vector3 velocity;
     private Camera cam;
-    private bool rideAdj;
-    private float closeOffset;
-    private float farOffset;
 
     private void Start()
     {
         cam = GetComponent<Camera>();
-        closeOffset = offset.y;
-        farOffset = offset.y;
+
     }
 
     private void FixedUpdate()
     {
         if (targets.Count == 0)
             return;
-
-        Move();
-        Zoom();
+        if (!lockedCam)
+        {
+            Move();
+            Zoom();
+        }
+        else
+        {
+            //   LockedCam();
+            Move();
+            LockedZoom();
+        }
     }
 
     void Zoom()
     {
         float newZoom = Mathf.Lerp(minZoom, maxZoom, GetGreatestDistance() / zoomLimiter);
         cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
+    }
+
+    void LockedCam()
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, lockedPos, ref velocity, smoothTime);
+    }
+
+    void LockedZoom()
+    {
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, lockedZoom, Time.deltaTime);
     }
 
     float GetGreatestDistance()
@@ -75,13 +93,27 @@ public class MultipletargetCamera : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
     }
 
-    Vector3 getCentrePoint()
+    public Vector3 getCentrePointOfPlayers()
     {
         if (targets.Count == 1)
         {
             return targets[0].position;
         }
 
+        var bounds = new Bounds(targets[0].position, Vector3.zero);
+        for (int i = 0; i < targets.Count; i++)
+        {
+            if (targets[i].CompareTag("Player"))
+                bounds.Encapsulate(targets[i].position);
+        }
+        return bounds.center;
+    }
+    Vector3 getCentrePoint()
+    {
+        if (targets.Count == 1)
+        {
+            return targets[0].position;
+        }
         var bounds = new Bounds(targets[0].position, Vector3.zero);
         for (int i = 0; i < targets.Count; i++)
         {

@@ -9,6 +9,7 @@ public class Finish : MonoBehaviour
     private int playersReached = 0;
     public GameObject cam;
     public string nxtLvl;
+    public GameObject uiMngr;
 
 
     private void Start()
@@ -27,6 +28,7 @@ public class Finish : MonoBehaviour
             }
             if (playersReached == 2)
             {
+                uiMngr.GetComponent<UIManager>().timerRunning = false;
                 GameManager.Instance.LevelEnd();
             }
         }

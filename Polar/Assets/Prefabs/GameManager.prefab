@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1550457743888242596}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5510459308838783694
 MonoBehaviour:
@@ -52,6 +52,9 @@ MonoBehaviour:
   deathMsg: 
   prevScene: 
   nextScene: 
+  isPoluted: 0
+  playTut: 0
+  playCS: 0
 --- !u!1 &8341773142206771516
 GameObject:
   m_ObjectHideFlags: 0

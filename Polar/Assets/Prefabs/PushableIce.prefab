@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whoCanPush: {fileID: 0}
-  validPush: 300
+  validPush: 200
   invalidPush: 30000
 --- !u!19719996 &1287961247458940066
 TilemapCollider2D:
@@ -259,7 +259,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!66 &6071090895176793912
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -298,27 +298,9 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 1287961247458940066}
-    m_ColliderPaths:
-    - - X: 780000000
-        Y: -20000000
-      - X: 730000000
-        Y: -20000000
-      - X: 730000000
-        Y: -30000000
-      - X: 720000000
-        Y: -30000000
-      - X: 720000000
-        Y: -50000000
-      - X: 780000000
-        Y: -50000000
+    m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: 77.99997, y: -5}
-      - {x: 77.99997, y: -2}
-      - {x: 73, y: -2.0000293}
-      - {x: 72.99997, y: -3}
-      - {x: 72, y: -3.0000293}
-      - {x: 72.00003, y: -5}
+    m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0

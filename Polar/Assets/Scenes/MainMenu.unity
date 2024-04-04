@@ -971,7 +971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 567413792}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: clean
+        m_MethodName: Clean
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1266,10 +1266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -3488,7 +3488,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 567413792}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: oil
+        m_MethodName: Oil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9834690126d00b04089bfffff6588d12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de7209b6ca3a7cf4d99537027cc34cb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3780,7 +3780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.4000244, y: -35.799988}
+  m_AnchoredPosition: {x: -3.375, y: -35.8125}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1842801175

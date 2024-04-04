@@ -11,6 +11,8 @@ public class GameOver : MonoBehaviour
     public AudioSource src;
     void Start()
     {
+        GameManager.Instance.playCS = false;
+        GameManager.Instance.playTut = false;
         src.clip = onClickSfx;
         deathMsgTxt.text = GameManager.Instance.deathMsg;
     }

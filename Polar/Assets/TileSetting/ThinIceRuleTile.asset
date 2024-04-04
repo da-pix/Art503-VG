@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
   m_Name: ThinIceRuleTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 1722102953, guid: a6527bcc9799ee84082f29d52b80b28f, type: 3}
+  m_DefaultSprite: {fileID: -1561753358, guid: adb7f29662e6bd54194bae3dcd441918, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: 800840689, guid: a6527bcc9799ee84082f29d52b80b28f, type: 3}
+    - {fileID: -927703738, guid: adb7f29662e6bd54194bae3dcd441918, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: 1722102953, guid: a6527bcc9799ee84082f29d52b80b28f, type: 3}
+    - {fileID: -1561753358, guid: adb7f29662e6bd54194bae3dcd441918, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -1568455385, guid: a6527bcc9799ee84082f29d52b80b28f, type: 3}
+    - {fileID: -128786384, guid: adb7f29662e6bd54194bae3dcd441918, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1

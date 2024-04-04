@@ -73,7 +73,7 @@ public class CollisionDetection : MonoBehaviour
             {
                 GetComponent<PlayerController>().isOnIce = true;
             }
-            collision.gameObject.GetComponent<ThinIce>().BreakCheck(gameObject);
+            collision.gameObject.GetComponent<ThinIce>().BreakCheck(gameObject, GetComponent<PlayerController>().slamming);
         }
         else if (collision.gameObject.tag.Equals("Pushable"))               // Collison with a pushable object
         {
@@ -101,9 +101,9 @@ public class CollisionDetection : MonoBehaviour
             else
             {
                 if (!otherPlayer.gameObject.activeSelf)
-                    GameManager.Instance.GameOver("Only one of you made it out");
+                    GameManager.Instance.GameOver("Only one bear made it out");
                 else
-                    GameManager.Instance.GameOver("Both bears succumbed to the artic");
+                    GameManager.Instance.GameOver("Both bears met an oily end");
             }
 
         }
@@ -147,7 +147,7 @@ public class CollisionDetection : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide && collision != null)                  // Stopped riding mom bear
+        if (collision != null && collision.gameObject.name == otherPlayer.name && collision.gameObject != GetComponent<PlayerController>().cannotRide)                  // Stopped riding mom bear
         {
             GetComponent<PlayerController>().Riding = null;
         }

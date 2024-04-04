@@ -35,8 +35,8 @@ public class Crackable : MonoBehaviour
         crack1.SetActive(true);
         audioManager.PlaySFX(audioManager.crack1);
         yield return new WaitForSeconds(timeDelay / 3);
-        crack1.SetActive(false);
         crack2.SetActive(true);
+        crack1.SetActive(false);
         audioManager.PlaySFX(audioManager.crack2);
         yield return new WaitForSeconds(timeDelay / 3);
         audioManager.PlaySFX(audioManager.crack3);

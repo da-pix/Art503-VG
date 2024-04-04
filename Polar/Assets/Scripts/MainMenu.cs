@@ -24,12 +24,12 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) && creds.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Tab) && creds.activeSelf)
         {
             intrface.SetActive(true);
             creds.SetActive(false);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && selctMenu.activeSelf)
+        else if (Input.GetKeyDown(KeyCode.Tab) && selctMenu.activeSelf)
         {
             selctMenu.SetActive(false);
         }

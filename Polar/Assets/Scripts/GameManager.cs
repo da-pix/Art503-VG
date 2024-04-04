@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public bool isPoluted;
     public bool playTut;
     public bool playCS;
+    public Vector2 levelCompleteTime;
 
     private void Awake()
     {
@@ -33,7 +34,21 @@ public class GameManager : MonoBehaviour
 
         curentScene = SceneManager.GetActiveScene().name;
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.KeypadPlus)) //DEBUG********
+        {
+            GoNextScene();
+        }
+        else if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            GoPrevScene();
+        }
+        else if (Input.GetKeyDown(KeyCode.KeypadMultiply))
+        {
+            LevelEnd();
+        }
+    }
     public void ResetHearts()
     {
         numOfHearts = 3;
@@ -64,7 +79,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ChangeLvlFade("LevelEnd"));
     }
 
-    IEnumerator ChangeLvlFade( String nxtlvl)
+    IEnumerator ChangeLvlFade(String nxtlvl)
     {
         anim.SetBool("Fade", true);
         yield return new WaitForSeconds(1);

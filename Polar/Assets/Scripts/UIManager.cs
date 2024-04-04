@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,10 @@ public class UIManager : MonoBehaviour
     public AudioSource src;
     public Sprite close;
     public Sprite far;
+    public AudioSource wind;
+
+    public float elapsedTime;
+    public bool timerRunning = false;
 
     private void Awake()
     {
@@ -45,8 +50,11 @@ public class UIManager : MonoBehaviour
         }
         else if (!GameManager.Instance.playCS && GameManager.Instance.playTut)
             StartCoroutine(PlayTut(0f));
-
-
+        else
+        {
+            timerRunning = true;
+            wind.Play();
+        }
 
         GameManager.Instance.totalFish = collectableFish.transform.childCount;
     }
@@ -59,13 +67,15 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(4);
         tutUI.SetActive(false);
         Time.timeScale = 1f;
+        timerRunning = true;
+        wind.Play();
     }
 
     void Update()
     {
         fishText.text = GameManager.Instance.numOfFish.ToString() + " x ";
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (GameIsPaused)
             {
@@ -76,8 +86,18 @@ public class UIManager : MonoBehaviour
                 Pause();
             }
         }
+        if(GameManager.Instance.playCS && cutScene.state != PlayState.Playing)
+        {
+            timerRunning = true;
+        }
 
-
+        if (timerRunning)
+        {
+            elapsedTime += Time.deltaTime;
+            int min = Mathf.FloorToInt(elapsedTime / 60);
+            int sec = Mathf.FloorToInt(elapsedTime % 60);
+            GameManager.Instance.levelCompleteTime = new Vector2(min, sec);
+        }
     }
 
     public void LoseHeart()

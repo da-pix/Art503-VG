@@ -20,6 +20,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip crack2;
     public AudioClip crack3;
     public AudioClip thinIceCrack;
+    public AudioClip thinSnowBreak;
+    public AudioClip land;
+
 
     public void Start()
     {

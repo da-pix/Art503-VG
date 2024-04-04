@@ -9,9 +9,10 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     public float iceMoveSpeed;
+    public float maxIceSpeed;
     public float jumpForce;
     public float jumpMoveSpeed;
-    public KeyCode jumpKey, leftKey, rightKey;
+    public KeyCode jumpKey, slamKey;
     private Transform groundCheck;
     public LayerMask groundLayer, playerLayer;
     float xInput;
@@ -25,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public bool isOnIce = false;
     public ParticleSystem trail;
     private AudioSource footstepSrc;
+    public bool canSlam;
+    public bool slamming = false;
 
     [SerializeField] PlayerInput playInput;
     Rigidbody2D rb;
@@ -52,6 +55,10 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        else if (Input.GetKeyDown(slamKey) && !isGrounded)
+        {
+            Slam();
+        }
 
         //       if (Input.GetKeyDown(KeyCode.E))
         //           CheckInteraction();
@@ -59,12 +66,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        xInput = playInput.actions["Move"].ReadValue<Vector2>().x;
+        //xInput = playInput.actions["Move"].ReadValue<Vector2>().x;
 
-        GroundCheck();
+        StartCoroutine(GroundCheck());
         Playermove();
         FlipPlayer();
         Checktrail();
+    }
+
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        xInput = context.ReadValue<Vector2>().x;
     }
 
     void Playermove()
@@ -80,8 +92,19 @@ public class PlayerController : MonoBehaviour
 
             else if (isOnIce)
             {
-                rb.AddForce(new Vector2(iceMoveSpeed * xInput, rb.velocity.y));
+
+                if (rb.velocity.x < 0 && Mathf.Abs(rb.velocity.x) > maxIceSpeed)
+                {
+                    rb.velocity = new Vector2(-maxIceSpeed, rb.velocity.y);
+                    return;
+                }
+                else if (rb.velocity.x > 0 && Mathf.Abs(rb.velocity.x) > maxIceSpeed)
+                {
+                    rb.velocity = new Vector2(maxIceSpeed, rb.velocity.y);
+                    return;
+                }
                 anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+                rb.AddForce(new Vector2(iceMoveSpeed * xInput, rb.velocity.y));
 
             }
             else
@@ -111,11 +134,26 @@ public class PlayerController : MonoBehaviour
 
         if (Riding != null)
             rb.velocity = new Vector2(Riding.GetComponent<Rigidbody2D>().velocity.x, jumpForce);
+        else if (isOnIce)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
         else
             rb.velocity = Vector2.up * jumpForce;
+        //StartCoroutine(SlamCheck());
     }
 
-    void GroundCheck()
+    void Slam()
+    {
+        Debug.Log("slaming!");
+
+        slamming = true;
+        anim.SetBool("Slamming", true);
+
+        rb.velocity = new Vector2(rb.velocity.x, -jumpForce * 0.8f);
+    }
+
+    IEnumerator GroundCheck()
     {
         bool wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapBox(groundCheck.position, GroundCheckSize, 0f, groundLayer) || Physics2D.OverlapBox(groundCheck.position, GroundCheckSize, 0f, playerLayer);
@@ -123,7 +161,13 @@ public class PlayerController : MonoBehaviour
         if ((wasGrounded == false) && (isGrounded == true))
         {
             anim.SetBool("IsJumping", false);
-
+            yield return new WaitForSeconds(0.1f);
+            if (slamming)
+            {
+                audioManager.PlayplayerSFX(audioManager.land);
+                slamming = false;
+                anim.SetBool("Slamming", false);
+            }
 
         }
     }
@@ -142,7 +186,7 @@ public class PlayerController : MonoBehaviour
     }
     void Checktrail()
     {
-        if (anim.GetFloat("Speed") > 0 && !anim.GetBool("IsJumping"))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Walk")) //anim.GetFloat("Speed") > 0 && !anim.GetBool("IsJumping")
         {
             trail.Play();
             footstepSrc.enabled = true;
