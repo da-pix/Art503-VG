@@ -10,23 +10,11 @@ public class CamLocker : MonoBehaviour
     public Vector3 lockedCamPos;
     public float lockedCamZoom;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(collision.name);
+            //Debug.Log(collision.name);
             if (plyrs.Contains(collision.transform))
             {
                 return;

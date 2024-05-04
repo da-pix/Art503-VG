@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8044626405823081766}
+  - component: {fileID: 2870385069543067350}
   - component: {fileID: 4846584578478810963}
   - component: {fileID: 4597982567153311899}
   - component: {fileID: 5345607636985693537}
   - component: {fileID: 8817349017039648349}
   - component: {fileID: 4979727375879363282}
-  - component: {fileID: 2870385069543067350}
   m_Layer: 8
   m_Name: ThinIce
   m_TagString: SelectiveBreakable
@@ -37,6 +37,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2870385069543067350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490883593201559241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a8a1a730213ab4c8974f79a3ea7323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whoCanBreak: {fileID: 0}
+  isIcey: 1
+  isSnowey: 0
+  slamable: 0
 --- !u!1839735485 &4846584578478810963
 Tilemap:
   m_ObjectHideFlags: 0
@@ -253,54 +269,10 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 5345607636985693537}
-    m_ColliderPaths:
-    - - X: 509375008
-        Y: -8125000
-      - X: 510000000
-        Y: -7500000
-      - X: 560000000
-        Y: -7500000
-      - X: 560000000
-        Y: -8125000
-      - X: 562499968
-        Y: -10000000
-      - X: 570000000
-        Y: -10000000
-      - X: 570000000
-        Y: 0
-      - X: 500000000
-        Y: 0
-      - X: 500000000
-        Y: -10000000
-      - X: 506875008
-        Y: -10000000
+    m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths:
-    - - {x: 50.687492, y: -1}
-      - {x: 50.9375, y: -0.8124985}
-      - {x: 51.00001, y: -0.75}
-      - {x: 56, y: -0.7500294}
-      - {x: 56.000015, y: -0.8125079}
-      - {x: 56.250004, y: -1}
-      - {x: 57, y: -0.99997073}
-      - {x: 56.99997, y: 0}
-      - {x: 50, y: -0.000029300001}
-      - {x: 50.00003, y: -1}
+    m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 2490883593201559241}
---- !u!114 &2870385069543067350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490883593201559241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a8a1a730213ab4c8974f79a3ea7323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whoCanBreak: {fileID: 0}
-  isIcey: 1

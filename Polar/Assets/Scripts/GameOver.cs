@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI deathMsgTxt;
+    public TextMeshProUGUI deathCountTxt;
+
     public AudioClip onClickSfx;
     public AudioSource src;
     void Start()
@@ -15,16 +17,16 @@ public class GameOver : MonoBehaviour
         GameManager.Instance.playTut = false;
         src.clip = onClickSfx;
         deathMsgTxt.text = GameManager.Instance.deathMsg;
+        deathCountTxt.text = "Total deaths: " + GameManager.Instance.totalDeaths;
     }
     public void LoadGame()
     {
         src.Play();
         GameManager.Instance.GoPrevScene();
     }
-    public void QuitGame()
+    public void LoadMenu()
     {
         src.Play();
-        Application.Quit();
-        Debug.Log("Game is quitting...");
+        GameManager.Instance.MainMenu();
     }
 }

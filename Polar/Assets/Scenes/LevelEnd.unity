@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 43d2ae439bd277b438bc498e007ceefe, type: 2}
   m_sharedMaterial: {fileID: 2819040475678818022, guid: 43d2ae439bd277b438bc498e007ceefe, type: 2}
@@ -1649,7 +1649,7 @@ GameObject:
   - component: {fileID: 1529360831}
   - component: {fileID: 1529360830}
   m_Layer: 5
-  m_Name: quit Button
+  m_Name: menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1751,7 +1751,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1089365526}
         m_TargetAssemblyTypeName: LevelEnd, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

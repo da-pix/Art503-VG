@@ -25,6 +25,7 @@ public class Victory : MonoBehaviour
     }
     public void Replay()
     {
+        GameManager.Instance.ResetDeathCount();
         GameManager.Instance.GoNextScene();
     }
     public void LoadMenu()

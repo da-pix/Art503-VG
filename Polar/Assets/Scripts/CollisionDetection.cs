@@ -30,9 +30,10 @@ public class CollisionDetection : MonoBehaviour
 
     private IEnumerator SafeRespawn()                                          // Ensures the other player is grounded to respawn them there
     {
-        if (otherPlayer.GetComponent<PlayerController>().isGrounded)
+        if (otherPlayer.GetComponent<PlayerController>().isGrounded && otherPlayer.GetComponent<PlayerController>().Riding == null )
         {
             transform.position = otherPlayer.transform.position;
+            Debug.Log("shouldnt see this");
 
         }
         else
@@ -43,7 +44,7 @@ public class CollisionDetection : MonoBehaviour
             cam.GetComponent<MultipletargetCamera>().targets.Remove(transform);
             while (!GetComponent<SpriteRenderer>().enabled == true)
             {
-                if (otherPlayer.GetComponent<PlayerController>().isGrounded)
+                if (otherPlayer.GetComponent<PlayerController>().isGrounded && otherPlayer.GetComponent<PlayerController>().Riding == null)
                 {
                     transform.position = otherPlayer.transform.position;
                     cam.GetComponent<MultipletargetCamera>().targets.Add(transform);
@@ -101,9 +102,15 @@ public class CollisionDetection : MonoBehaviour
             else
             {
                 if (!otherPlayer.gameObject.activeSelf)
+                {
+                    gameObject.SetActive(false);
                     GameManager.Instance.GameOver("Only one bear made it out");
+                }
                 else
+                {
+                    gameObject.SetActive(false);
                     GameManager.Instance.GameOver("Both bears met an oily end");
+                }
             }
 
         }

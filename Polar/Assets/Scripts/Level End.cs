@@ -28,10 +28,9 @@ public class LevelEnd : MonoBehaviour
         src.Play();
         GameManager.Instance.GoPrevScene();
     }
-    public void QuitGame()
+    public void LoadMenu()
     {
         src.Play();
-        Application.Quit();
-        Debug.Log("Game is quitting...");
+        GameManager.Instance.MainMenu();
     }
 }

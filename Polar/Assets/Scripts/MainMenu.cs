@@ -17,6 +17,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        GameManager.Instance.playCS = true;
+        GameManager.Instance.playTut = true;
         GameManager.Instance.nextScene = nxtLvl;
         src.clip = onClickSfx;
     }
@@ -38,6 +40,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         src.Play();
+        GameManager.Instance.ResetDeathCount();
         GameManager.Instance.GoNextScene();
     }
 

@@ -293,7 +293,7 @@ MonoBehaviour:
   - {fileID: 5696855657080917684}
   - {fileID: 6172139620747493818}
   - {fileID: 3253502194046781567}
-  m_FixedDuration: 8
+  m_FixedDuration: 12
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5.5
+    m_Start: 6.65
     m_ClipIn: 0
     m_Asset: {fileID: 3551157927849792564}
     m_Duration: 1.5
@@ -693,7 +693,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 5.5
+    m_PreExtrapolationTime: 6.65
     m_DisplayName: Recorded (5)
   m_Markers:
     m_Objects: []
@@ -944,11 +944,11 @@ MonoBehaviour:
     m_Recordable: 1
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 1.5
+    m_PostExtrapolationTime: 3
     m_PreExtrapolationTime: 0.5
     m_DisplayName: image 1
   - m_Version: 1
-    m_Start: 3.5
+    m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: -6540280776726418706}
     m_Duration: 1.5
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -4145080617481324109}
-    m_Duration: 7.983333333333333
+    m_Duration: 11.983333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5696855657080917684}
     m_EaseInDuration: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5.5
+    m_Start: 6.65
     m_ClipIn: 0
     m_Asset: {fileID: 980924034357306322}
     m_Duration: 1.5
@@ -1360,7 +1360,7 @@ MonoBehaviour:
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 5.5
+    m_PreExtrapolationTime: 6.65
     m_DisplayName: Recorded (2)
   m_Markers:
     m_Objects: []
@@ -1491,11 +1491,11 @@ MonoBehaviour:
     m_Recordable: 1
     m_PostExtrapolationMode: 1
     m_PreExtrapolationMode: 1
-    m_PostExtrapolationTime: 1.5
+    m_PostExtrapolationTime: 3
     m_PreExtrapolationTime: 0.5
     m_DisplayName: text 1
   - m_Version: 1
-    m_Start: 3.5
+    m_Start: 5
     m_ClipIn: 0
     m_Asset: {fileID: 553205801678739205}
     m_Duration: 1.5

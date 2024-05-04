@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int numOfHearts;
     public int numOfFish;
     public int totalFish;
+    public float totalDeaths;
     public string deathMsg;
     private string curentScene;
     public string prevScene;
@@ -57,8 +58,14 @@ public class GameManager : MonoBehaviour
     {
         numOfFish = 0;
     }
+
+    public void ResetDeathCount()
+    {
+        totalDeaths = 0;
+    }
     public void GameOver(String msg)
     {
+        totalDeaths+= 1;
         deathMsg = msg;
         prevScene = SceneManager.GetActiveScene().name;
         Resetfish();
